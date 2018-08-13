@@ -1,5 +1,5 @@
-import angular from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/angular';
-import '../style/app.css';
+import angular from 'angular';
+import '../../style/app.css';
 import uirouter from 'angular-ui-router';
 import ViewCoverageDetailsController from './controllers/viewController'
 import EditCoverageDetailsController from './controllers/editController'

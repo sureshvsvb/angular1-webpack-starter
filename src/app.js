@@ -1,5 +1,5 @@
 import angular from 'angular';
-import coverageModule from './coverage/coverage.module'
+import coverageModule from './features/coverage/coverage.module'
 import uirouter from 'angular-ui-router';
 import routing from './app.config';
 const MODULE_NAME = 'metromile.ui';

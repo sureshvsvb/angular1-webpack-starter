@@ -7,13 +7,11 @@ export default function routes($stateProvider, $urlRouterProvider) {
     .state('viewcoverage', {
       url: '/viewcoverage/:id',
       template: require('./../views/viewCoverage.html'),
-      controller: 'ViewCoverageDetailsController',
-      controllerAs: 'viewController'
+      controller: 'ViewCoverageDetailsController'
     })
     .state('editcoverage', {
       url: '/editcoverage/:id',
       template: require('./../views/editCoverage.html'),
-      controller: 'EditCoverageDetailsController',
-      controllerAs: 'editController'
+      controller: 'EditCoverageDetailsController'
     })
 }

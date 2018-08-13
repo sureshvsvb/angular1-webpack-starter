@@ -2,7 +2,7 @@ export default class CoveragesInfoService {
     constructor($http) {
         this.$http = $http;
     }
-    getCoveragesInfo () {
+    getAllCoverageOptions() {
         return this.$http.get('./mocks/coverages.json')
     }
 }

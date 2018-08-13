@@ -1,0 +1,46 @@
+<div ng-controller="EditCoverageDetailsController as ctrl">
+    <div class="container edit-panel">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ctrl.coverageDetails.old.name}}</div>
+            <div class="panel-body">
+                <div class="col-xs-12" ng-repeat="coverageOption in ctrl.allCoverageOptions">
+                    <div class="col-xs-12">{{coverageOption.title}}</div>
+                    <div class="col-xs-12">
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group" role="group" ng-repeat="option in coverageOption.options">
+                                <button type="button" class="btn btn-default" ng-class="{'custom-button-color': option.value == ctrl.coverageDetails.new[coverageOption.name]}"
+                                    ng-click="ctrl.onOptionChange(coverageOption.name, option.value)">{{option.name}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container changes-panel">
+        <div class="panel panel-default">
+            <div class="panel-heading">Coverage Changes</div>
+            <div class="panel-body row" ng-if="!ctrl.isDirty">
+                <div class="col-xs-9">No Changes</div>
+            </div>
+            <div class="panel-body row" ng-if="ctrl.isDirty">
+                <div class="col-xs-12" ng-repeat="coverageOption in ctrl.allCoverageOptions">
+                    <div class="col-xs-9">{{coverageOption.title}}</div>
+                    <div class="col-xs-3">
+                        <span>{{ctrl.getDisplayValue(ctrl.coverageDetails.old[coverageOption.name])}}</span>
+                        <span>--></span>
+                        <span>{{ctrl.getDisplayValue(ctrl.coverageDetails.new[coverageOption.name])}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div>
+                    <a class="btn custom-button-color" ng-click="ctrl.isDirty && ctrl.onSave()" ng-disabled="!ctrl.isDirty">SAVE CHANGES</a>
+                </div>
+                <div>
+                    <a class="btn custom-color" ng-click="ctrl.onCancel()">CANCEL CHANGES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

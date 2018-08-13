@@ -1,7 +1,15 @@
 /* styles in src/style directory are applied to the whole page */
+@import url('./../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+body {
+  padding: 3em;
+}
 
 a {
   color: #03A9F4;
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 main {
@@ -15,4 +23,37 @@ main {
 footer {
   text-align: center;
   font-size: 0.8em;
+}
+
+/*Main Panel*/
+.view-panel .col-xs-12, .edit-panel .col-xs-12, .changes-panel .col-xs-12 {
+  padding: 5px 0;
+}
+.view-panel .col-xs-3, .changes-panel .col-xs-3 {
+  text-align: right;
+}
+
+.view-panel .panel-footer, .changes-panel .panel-footer {
+  cursor: pointer;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.changes-panel a {
+  width: 200px;
+  margin: 10px;
+}
+
+.custom-button-color {
+  color: #ffffff;
+  background: #20b2aa;
+}
+
+.custom-color {
+  color: #20b2aa;
+}
+
+.view-panel, .edit-panel, .changes-panel {
+  width: 50%;
+  margin: auto;
 }

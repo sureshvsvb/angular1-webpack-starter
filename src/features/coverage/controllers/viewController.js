@@ -6,7 +6,7 @@ export default class ViewCoverageDetailsController {
       this.coverageDetailsService = CoverageDetailsService;
       this.coverageDetails = {};
       this.coverageId = this.$stateParams.id;
-     this.getCoverageDetails(this.coverageId);
+      this.getCoverageDetails(this.coverageId);
     }
     getCoverageDetails(coverageId){
       this.coverageDetailsService.getCoverageDetails(1).then(
@@ -18,7 +18,6 @@ export default class ViewCoverageDetailsController {
         } 
       )
     }
-
     goToEditCoverage(coverageId){
       this.$state.go('editcoverage', { id: coverageId });
     }
